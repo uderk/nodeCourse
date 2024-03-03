@@ -1,6 +1,6 @@
 function auth(next) {
   console.log('Authenticating...')
-  next();
+  next()
 }
 
-module.exports = auth;
+module.exports = auth

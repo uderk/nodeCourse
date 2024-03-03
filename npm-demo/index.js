@@ -1,5 +1,5 @@
-const _ = require('underscore');
+const _ = require('underscore')
 
-let result = _.contains([1, 2, 3], 2);
+let result = _.contains([1, 2, 3], 2)
 
-console.log(result); // true
+console.log(result) // true
