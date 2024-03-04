@@ -1,0 +1,30 @@
+name: pull request 
+on: 
+    pull_request:
+    workflow_dispatch:
+    push: 
+        branches: [main]
+jobs: 
+    test: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Install dependencies 
+              run: npm install 
+            - name: Run tests
+              run: npm run ci
+    deploy: 
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Install dependencies 
+              run: npm install 
+            - name: build code
+              run: echo 'simulating code build'
+            - name: deploy
+              run: echo 'simulationg code deploy'
+
+              
