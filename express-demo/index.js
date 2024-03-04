@@ -21,7 +21,6 @@ console.log('Application Name is: ' + config.get('name'))
 console.log('Mail Server: ' + config.get('mail.host'))
 console.log(`env ${app.get('env')}`)
 
-
 if (app.get('env') === 'development') {
   app.use(morgan('tiny'))
   startupDebugger('Morgan enabled...')

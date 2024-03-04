@@ -11,7 +11,7 @@
     "pretty:fix": "npx prettier --write .",
     "pretty:check": "npx prettier --check .",
     "lint:check": "npx eslint .",
-    "ci": "npx prettier --check . && npx eslint."
+    "ci": "npx prettier --check . && npx eslint ."
   },
   "devDependencies": {
     "eslint": "^8.57.0"
