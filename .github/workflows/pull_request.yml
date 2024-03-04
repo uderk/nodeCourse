@@ -13,7 +13,7 @@ jobs:
       - name: Cache dependencies
         id: cache-dep
         uses: actions/checkout@v4
-        with: 
+        with:
           path: './npm'
           key: cache-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
@@ -29,7 +29,7 @@ jobs:
       - name: Cache dependencies
         id: cache-dep
         uses: actions/checkout@v4
-        with: 
+        with:
           path: './npm'
           key: cache-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
@@ -39,6 +39,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    steps: 
-      - name:  build
+    steps:
+      - name: build
         run: echo 'simulationg code deploy'
