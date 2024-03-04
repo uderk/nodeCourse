@@ -10,23 +10,35 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        shell: bash
-        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+      - name: Cache dependencies
+        id: cache-dep
+        uses: actions/checkout@v4
+        with: 
+          path: './npm'
+          key: cache-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm install
       - name: Run tests
         run: npm run ci
-  deploy:
+  build:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v4
+      - name: Cache dependencies
+        id: cache-dep
+        uses: actions/checkout@v4
+        with: 
+          path: './npm'
+          key: cache-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm install
       - name: build code
         run: echo 'simulating code build'
-      - name: deploy
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps: 
+      - name:  build
         run: echo 'simulationg code deploy'
