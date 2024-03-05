@@ -1,7 +1,7 @@
 const p = Promise.resolve({ id: 1, username: 'veni' })
 p.then((user) => console.log(user))
 
-const p1 = new Promise((resolve, reject) => {
+const p1 = new Promise((resolve) => {
   setTimeout(() => {
     console.log('Async operation 1 ...')
     resolve(1)

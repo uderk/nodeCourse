@@ -38,7 +38,7 @@ function getUser(id) {
 }
 
 function getRepositories(username) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       console.log('logging into GitHub')
       resolve({ username: username, repositories: ['repo1', 'repo2'] })
@@ -47,7 +47,7 @@ function getRepositories(username) {
 }
 
 function getCommits(repo) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       console.log('getting commits')
       resolve({ repo: repo, commits: ['cm1', 'cm2', 'cm3'] })
